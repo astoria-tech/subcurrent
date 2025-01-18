@@ -1,0 +1,26 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./subcurrent.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Feed {
+  id         Int     @id @default(autoincrement())
+  url        String  @unique
+  authorName String
+  approved   Boolean @default(false)
+  posts      Post[]
+}
+
+model Post {
+  id      Int      @id @default(autoincrement())
+  title   String
+  link    String   @unique
+  pubDate DateTime
+  snippet String?
+  feed    Feed     @relation(fields: [feedId], references: [id])
+  feedId  Int
+}
