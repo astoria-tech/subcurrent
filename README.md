@@ -15,8 +15,14 @@ A content aggregator for the Astoria Tech Meetup.
 
 1. Clone the repo
 2. Run `npm install`
-3. Run `npm run dev`
-4. Open [http://localhost:3000/community-blogs](http://localhost:3000/community-blogs) with your browser.
+3. Create a `.env.local` file with the following contents:
+
+   ```txt
+   NEXT_PUBLIC_BASE_URL=http://localhost:3000
+   ```
+
+4. Run `npm run dev`
+5. Open [http://localhost:3000/community-blogs](http://localhost:3000/community-blogs) with your browser.
 
 ## Development
 
