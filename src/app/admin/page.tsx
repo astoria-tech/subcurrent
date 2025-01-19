@@ -10,7 +10,7 @@ export default function Admin() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch("/api/manage-feeds", {
+    const res = await fetch("/api/register-feed", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url, authorName }),
